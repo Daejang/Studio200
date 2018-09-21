@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Sources\Engine.cpp" />
     <ClCompile Include="Sources\GameStateManager.cpp" />
+    <ClCompile Include="Sources\Input.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
     <ClCompile Include="Sources\Stub.cpp" />
     <ClCompile Include="Sources\Time.cpp" />
@@ -28,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="Sources\Engine.h" />
     <ClInclude Include="Sources\GameStateManager.h" />
+    <ClInclude Include="Sources\Input.h" />
     <ClInclude Include="Sources\ISystem.h" />
     <ClInclude Include="Sources\Time.h" />
   </ItemGroup>
@@ -35,7 +37,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B97E9744-3511-49D3-9B38-B5293B546F07}</ProjectGuid>
     <RootNamespace>TopDownGettoBlaster</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -90,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>WinMM.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

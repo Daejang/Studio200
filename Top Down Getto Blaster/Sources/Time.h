@@ -30,8 +30,8 @@ public:
 private:
   
 
-  int oldTime;
-  int newTime;
+  float oldTime;
+  float newTime;
 
   float deltaTime;
 

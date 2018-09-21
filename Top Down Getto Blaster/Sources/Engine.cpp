@@ -13,15 +13,10 @@ void Engine::Start()
 
 void Engine::Update(float dt)
 {
-  printf("Begin Update...\n");
-
-
 	for each (ISystem* system in Systems)
 	{
 		system->Update(dt);
 	}
-
-  printf("End Update\n");
 }
 
 void Engine::End()
@@ -32,6 +27,17 @@ void Engine::End()
 	}
 
 	Systems.clear();
+}
+
+/* Adds all systems before starting the gameloop */
+
+void Engine::Prepare()
+{
+  Add(*new Input);
+
+
+
+
 }
 
 void Engine::Add(ISystem &system)

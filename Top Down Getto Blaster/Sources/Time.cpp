@@ -4,15 +4,15 @@
 
 void Time::Start()
 {
-  oldTime = timeGetTime();
+  oldTime = (float)timeGetTime();
 }
 
 void Time::Update(float dt)
 {
   _CRT_UNUSED(dt);
 
-  newTime = timeGetTime();
-  deltaTime = (newTime - oldTime) / 1000.0;
+  newTime = (float)timeGetTime();
+  deltaTime = (newTime - oldTime) / 1000;
   oldTime = newTime;
 
   deltaSum += deltaTime;
