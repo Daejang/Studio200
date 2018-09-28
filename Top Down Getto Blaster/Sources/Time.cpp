@@ -4,16 +4,19 @@
 
 void Time::Start()
 {
-  oldTime = (float)timeGetTime();
+  oldTime = steady_clock::now();
+
+  framerate = 60;
+  frameTime = 1 / framerate;
 }
 
 void Time::Update(float dt)
 {
   _CRT_UNUSED(dt);
 
-  newTime = (float)timeGetTime();
-  deltaTime = (newTime - oldTime) / 1000;
-  oldTime = newTime;
+  newTime   = steady_clock::now();
+  deltaTime = newTime - oldTime;
+  oldTime   = newTime;
 
   deltaSum += deltaTime;
 }
@@ -24,15 +27,14 @@ void Time::End()
 
 float Time::DeltaTime()
 {
-  return deltaTime;
+  return deltaTime.count() / 1000;
 }
 
 bool Time::IsNextFrameReady()
 {
-  if (deltaSum >= frameTime)
+  if (deltaSum.count() >= frameTime)
   {
-    deltaTime = deltaSum;
-    deltaSum  = 0;
+    
     return true;
   }
 
@@ -43,4 +45,3 @@ void Time::SetFrameRate(float rate)
 {
   framerate = rate;
 }
-

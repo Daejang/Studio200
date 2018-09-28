@@ -24,6 +24,7 @@
     <ClCompile Include="Sources\Input.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
     <ClCompile Include="Sources\Stub.cpp" />
+    <ClCompile Include="Sources\System.cpp" />
     <ClCompile Include="Sources\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +32,7 @@
     <ClInclude Include="Sources\GameStateManager.h" />
     <ClInclude Include="Sources\Input.h" />
     <ClInclude Include="Sources\ISystem.h" />
+    <ClInclude Include="Sources\System.h" />
     <ClInclude Include="Sources\Time.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -92,7 +94,8 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>WinMM.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>($SolutionDIr)/../lib/glfw-3.2.1.bin.WIN32/lib-vc2015/glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,10 +112,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\McIntosh\Documents\DigiPen\Courses\2018\Fall\GAM 200\Projects\Studio200\Top Down Getto Blaster\lib\glfw-3.2.1.bin.WIN32\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>($SolutionDIr)/../lib/glfw-3.2.1.bin.WIN32/lib-vc2015/glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

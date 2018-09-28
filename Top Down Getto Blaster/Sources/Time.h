@@ -1,7 +1,9 @@
 #pragma once
 
 #include "ISystem.h"
-#include <Windows.h>
+#include <chrono>
+
+using namespace std::chrono;
 
 class Time : public ISystem
 {
@@ -21,24 +23,20 @@ public:
 
   // Getters
   float DeltaTime();
-  bool  IsNextFrameReady();
-  
+  bool IsNextFrameReady();
+
   // Setters
   void SetFrameRate(float rate);
 
 
 private:
-  
 
-  float oldTime;
-  float newTime;
+  time_point<steady_clock> oldTime, newTime;
 
-  float deltaTime;
+  duration<float, std::milli> deltaTime;
 
-  float framerate = 60.0;
-  float frameTime = 1 / framerate;
+  float framerate;
+  float frameTime;
 
-  float deltaSum = 0.0;
-
-
+  duration<float, std::milli> deltaSum;
 };
